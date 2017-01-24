@@ -1,0 +1,66 @@
+body {
+    -background: blue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    text-align: right;
+    color: orange;
+}
+
+p:first-letter {
+    font-size: 30px;
+    color: red;
+    font-weight: bold;
+}
+
+em {
+    background: green;
+    color: white;
+}
+
+h2.ogorod {
+    color: orange;
+}
+
+h2.sklad {
+    color: blue;
+}
+
+ul>li {
+    font-weight: bold;
+}
+
+ul {
+    -color: grey;
+}
+
+ul.ogorod ol.fruit {
+    color: grey;
+}
+
+ul.sklad ol.fruit {
+    color: green;
+}
+
+ol.ovosh {
+    color: red;
+}
+
+table {
+    table-layout: fixed;
+    width: 70%;
+    text-align: center;
+    font-weight: bold;
+}
+
+table :nth-child(1n+3) td {
+    color: orange;
+    text-align: left;
+}
+
+table :nth-child(1n+3) :nth-child(1n+2) {
+    color: white;
+    background: green;
+    text-align: center;
+}

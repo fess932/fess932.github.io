@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="element-ui.css"> -->
+    <link rel="stylesheet" href="index.css">
+    <title>Rolegame</title>
+</head>
+<body>https://docs.google.com/document/d/1e9_vXKdyDcshVDlf0dGRq_CHzFXoBpyIg0d-tMVOTHE/edit?usp=sharing
+    <main>
+        <h1>Ролевая игра</h1>
+        <div>
+            <div class="weight">Вес <input type="text"> кг</div>
+            <div class="attack-type">Вид атаки:
+               <label>Неэффективная <input type="radio" name="attack-type" id=""></label>
+               <label>Эффективная <input type="radio" name="attack-type" id=""></label>
+            </div>
+            <div class="damage-type">Тип повреждений:
+               <label>обычные  <input type="radio" name="damage-type" id=""></label>
+               <label>тяжелые  <input type="radio" name="damage-type" id=""></label>
+               <label>фатальные  <input type="radio" name="damage-type" id=""></label>
+
+            </div>
+            <div class="limit">Болевой порог:
+               <label>сильная боль  <input type="radio" name="limit" id=""></label>
+               <label>Болевой паралич  <input type="radio" name="limit" id=""></label>
+               <label>Болевой шок  <input type="radio" name="limit" id=""></label>
+
+            </div>
+
+        </div>
+        <input type="button" value="OK">
+
+        <div>
+            Результат: <span>#</span>
+        </div>
+    </main>
+
+
+    <div id="app">
+        <el-button @click="visible = true">Button</el-button>
+        <el-dialog :visible.sync="visible" title="Hello world">
+          <p>Try Element</p>
+        </el-dialog>
+    </div>
+
+    <script src="vue.js"></script>
+    <script src="index.js"></script>
+    <!-- <script src="https://unpkg.com/vue/dist/vue.js"></script> -->
+    <!-- import JavaScript -->
+    <!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
+    <script>
+    let a = new Vue({
+      el: '#app',
+      data: function() {
+        return { visible: false }
+      }
+    })
+    console.log(a)
+    </script>
+</body>
+</html>

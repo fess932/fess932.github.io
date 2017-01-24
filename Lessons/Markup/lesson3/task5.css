@@ -1,0 +1,14 @@
+/*- background: #ddebf7; голубой  
+- background: #f2f2de; бежевый*/
+
+table{
+    border-collapse: collapse;
+}
+
+table  :nth-child(2n+2) td{
+    background: #ddebf7;
+}
+
+table tr :nth-child(2n+3){
+    background: #f2f2de;
+}

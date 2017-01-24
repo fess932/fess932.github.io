@@ -1,0 +1,143 @@
+/*
+Необходимо сверстать меню из макета menu1.png 
+использую inline-block.
+Линия растянута на всю ширину страницы. 
+Само меню шириной 900px и центрируется.
+Шрифт Impact.
+Для подключения шрифта вставьте link в title:*/
+
+* {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
+    padding: 0;
+    margin: 0;
+}
+
+
+div#pricing{
+    margin: 50px 0 50px 0;
+}
+
+div.price{
+    border: 1px solid #e8eaec;
+    border-radius: 5px;
+}
+
+.pricing-header {
+    width: 100%;
+        font-size: 30pt;
+    font-weight: bold;
+    margin: 50px 0px 50px 0px;
+}
+
+.pricing-group div {
+    background: white;
+    display: inline-block;
+    min-width: 290px;
+
+}
+
+.price {
+    padding: 0px 0px 20px 0px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.price div {
+    display: block;
+}
+
+div.header {
+    display: block;
+
+    background: #37c2d3;
+    color: white;
+    padding: 15px 0px 15px 0px;
+    font-size: 24pt;
+}
+
+div.header-2 {
+    font-size: 24pt;
+    background: white;
+    padding: 10px 0 10px 0;
+}
+
+div.howmach {
+    font-size: 30pt;
+    background: white;
+    padding: 10px 0 10px 0;
+}
+
+ul.list{
+    background: burlywood;
+    display: inline-block;
+    width: 90%;
+    margin-bottom: 15px;
+}
+
+ul.list li{
+    
+    text-align: left;
+    list-style: none;
+    padding: 5px 0px 5px 40px;
+    border: 1px solid white;
+}
+
+ul.list li:nth-child(2n+1){
+    background: #eef5fc;
+}
+
+ul.list li:nth-child(2n+2){
+    background: #f5f5f6;
+}
+
+
+
+
+
+ul.list li:before{
+    content: url(gal.png);
+    position: relative;
+    right: 15px;
+    top: 2px;
+}
+
+#pricing input.button{
+    font-size: 14pt;
+    font-weight: bold;
+    width: 90%;
+    padding: 10px 0 10px 0;
+    border-radius: 5px;
+    background: #3371a6;
+    color: white;
+    margin: 0;
+
+}
+
+
+div.price2{
+    border: 5px solid #ec8136;
+}
+
+div.price2 div.header {
+    display: block;
+    border-radius: px;
+    background: #ec8136;
+    color: white;
+    padding: 20px 0px 20px 0px;
+    font-size: 24pt;
+}
+
+.price2 {
+    padding: 0px 0px 40px 0px;
+    border-radius: 4px;
+    position: relative;
+    box-shadow: 0 0 10px black;
+    margin: 0 -5px 0 -5px;
+    z-index: 99;
+
+}
+
+#pricing input.button2{
+    background: #ec8136;
+}

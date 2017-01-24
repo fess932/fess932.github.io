@@ -1,0 +1,205 @@
+/* AUTO=body_background */ body { background: url(/assets/background/square_bg.png) repeat; }
+body {
+  margin: auto;
+  background-image: url(http://www.hdwallpaperup.com/wp-content/uploads/2015/06/Chocolate-Texture-Wallpaper-1024x768.jpg);
+  background-color: #986747;
+  background-size: 20%;
+  background-attachment: fixed;
+  font-family: 'Comfortaa';
+  font-style: normal;
+  color: rgb(100,84,94);
+}
+
+a {
+  color: rgba(78, 46, 40, 1);
+}
+
+.headline,
+.midheadline,
+.subheadline {
+  background-color: rgba(78, 46, 40, 1);
+  color: rgb(229,200,161);
+  border-color: rgb(229,200,161)
+}
+
+
+.headline > a,
+.midheadline > a,
+.subheadline > a {
+  color: rgb(229,200,161);
+}
+
+
+body:before {
+  z-index: 1000;
+  content: '';
+  display: block;
+  width: 188px;
+  height: 255px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: url(https://imgur.com/KN1XI2y.png) no-repeat;
+  background-size: cover;
+}
+
+body:after {
+  z-index: 1000;
+  content: '';
+  display: block;
+  width: 180px;
+  height: 255px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: url(https://imgur.com/ROuRYv7.png) no-repeat;
+  background-size: cover;
+}
+
+.avatar img, .b-comments header img {
+  border-radius: 50% !important;
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
+}
+
+.b-feedback, .copyright {
+  display: none;
+}
+
+.l-page {
+  margin-top: 46px;
+  margin-bottom: 46px;
+  width: 1000px;
+  /* background: rgba(220, 220, 220, 0.90); */
+  background: rgba(233, 211, 200, 0.6);
+
+  border-radius: 5px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+
+.spnsrs_vgtrk_x1170 {
+  max-width: 970px;
+}
+
+.l-top_menu .inner {
+  color: rgba(229,200,161, 1);
+  box-sizing: border-box;
+  position: fixed;
+  left: 50%;
+  margin-left: -500px;
+  background: rgba(60,30,30, 1);
+  width: 1000px;
+
+  padding-top: auto;
+  padding-bottom: auto;
+
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.3);
+
+  max-height: 46px;
+}
+
+.to-top-fix, .l-top_menu {
+    background: none;
+    border: none;
+}
+
+
+
+
+.l-top_menu .inner .menu {
+
+}
+
+.l-top_menu .inner .menu .entry a{
+
+}
+
+.b-main_search .input {
+  padding: 4px 5px;
+  height: 25px !important;
+  width: 189px !important;
+}
+
+.b-main_search .input input {
+  margin-top: 2px;
+  font-size: 12px;
+}
+
+.b-main_search ul.popup {
+  border: none;
+}
+
+.l-top_menu .menu-items>.entry>a {
+    font-size: 14px !important;
+    line-height: 39px;
+
+}
+
+.l-top_menu .menu-items>.entry {
+  color: inherit;
+}
+
+
+
+.l-top_menu .inner .logo {
+    height: 46px;
+    background-position: center;
+    padding: .85rem 2px;
+    padding-left: 14px;
+    background: none;
+    width: 8rem;
+    height: 46px;
+    margin: 0;
+}
+
+.l-top_menu .inner .logo:before {
+    content: 'Иван ♥ Инна';
+    font-size: 16px;
+    color: rgb(229,200,161);
+    font-family: 'Comfortaa';
+}
+
+.b-stats_bar .bar {
+    border-radius: 3px;
+    height: 18px;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+
+}
+
+.b-stats_bar .bar .first, .b-stats_bar .bar .second, .b-stats_bar .bar .third {
+    line-height: 18px;
+}
+
+.b-stats_bar.anime .bar .first, .b-stats_bar.manga .bar .first{
+    background: rgba(78,46,40, 1);
+}
+
+.b-stats_bar.anime .bar .second, .b-stats_bar.manga .bar .second {
+    background: rgba(78,46,40, 0.7);
+}
+
+.b-stats_bar.anime .bar .thrid, .b-stats_bar.manga .bar .thrid {
+    background: rgba(78,46,40, .2);
+}
+
+.p-profiles-show .profile-content .lifetime {
+  display: none;
+}
+
+
+/* cyrillic */
+@font-face {
+  font-family: "Comfortaa";
+  font-style: normal;
+  font-weight: bold;
+  src: local("Comfortaa Bold"), local("Comfortaa-Bold"),
+    url(//fonts.gstatic.com/s/comfortaa/v8/fND5XPYKrF2tQDwwfWZJIxdwxCXfZpKo5kWAx_74bHs.woff2)
+      format("woff2");
+  unicode-range: U+0normal-045f, U+0490-0491, U+04b0-04b1, U+2116;
+}

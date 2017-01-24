@@ -1,0 +1,62 @@
+/*
+Необходимо сверстать пейджер из макета pager.png.
+#a64dff; сиреневый
+.*/
+
+* {
+    font-family: Courier New, Courier, monospace;
+    font-weight: bold;
+    font-size: 15px;
+    list-style: none;
+    vertical-align: text-top;
+}
+
+.dots {
+    margin-top: 10px;
+}
+
+li {
+    color: #a64dff;
+    float: left;
+}
+
+li:hover {
+    color: white;
+    background: #a64dff;
+}
+
+div.pager {
+    position: absolute;
+    bottom: 20px;
+    width: 750px;
+}
+
+ul {
+    `padding: 10px;
+}
+
+ul.list li:not(.dots) {
+    padding: 5px 10px 5px 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 5px;
+}
+
+.before {
+    padding: 7px;
+    margin: 0 5px 0 5px;
+}
+
+.after {
+    padding: 7px;
+    margin: 0 5px 0 5px;
+}
+
+{
+    padding: 5px;
+}
+
+.pager {}

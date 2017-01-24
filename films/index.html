@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <title>Фильмы</title>
+  <meta content="Online song request list for {{STREAMER}}" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="favicon.ico" rel="shortcut icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+  <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+</head>
+<iframe  frameborder="no" scrolling="no" width="280" height="150" src="https://yandex.ru/time/widget/?geoid=36&lang=ru&layout=horiz&type=digital&face=serif"></iframe>
+<body id="background">
+  <div id="box">
+  <a target="_blank" href="https://docs.google.com/spreadsheets/d/1dfNPCafVXPg2CL-ls4I9W9UQGWnEclbxTjsRyTKDfCU/edit?usp=sharing"><h1> Список фильмов</h1></a>
+
+    <button id="randomNumber">Случайное число</button>
+    <form name="submit-to-google-sheet">
+      <input name="Название" type="text" placeholder="Введите название" required>
+      <input name="Ссылка" type="text" placeholder="Введите ссылку">
+      <button type="submit">Записать</button>
+    </form>
+
+    <p class="small hidden thx">Вы - молодец</p>
+
+    <script src="js/google-sheets-html.js" type="text/javascript"></script>
+
+    <div id="table">
+    </div>
+    <a target="_blank" href="https://docs.google.com/document/d/1k3OjKlfMbyurNbawlPbLJQd1iYCNUteGtQi2fqhTLpQ/edit?usp=sharing"><p class="small">
+      <i class="em em-heart"></i>
+      <i class="em em-heart"></i>
+      <i class="em em-heart"></i>
+      <i class="em em-heart"></i>
+      <i class="em em-heart"></i>
+    </p></a>
+
+
+
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz0Og3Kvn733BHxWV5VilzFO6C-PUo8gK1s7usI3bFKTRk57oY/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const thx = document.querySelector('.thx')
+        const table = document.querySelector('#table')
+        const Inna = '<i class="em em-heart hidden"></i>'
+        const Ivan = '<i class="em em-smirk_cat hidden"></i>'
+        const randomNumber = document.getElementById('randomNumber')
+
+
+
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+
+          let trs = table.querySelectorAll('tbody tr').length + 1
+          console.log(trs)
+
+          let formData = new FormData(form)
+          let href = formData.get('Ссылка')
+          formData.set('Ссылка', `<a target="_blank" href="${href}">${href}</a>`)
+          formData.set('№', trs)
+          formData.set('<3', Inna)
+          formData.set(':з', Ivan)
+
+          fetch(scriptURL, { method: 'POST', body: formData})
+            .then(response => console.log('Success!', response))
+            .then(() => form.reset())
+            .then(() => {
+              thx.innerHTML = 'Вы - молодец! Добавьте еще!'
+              thx.classList.remove('hidden')
+            })
+            .then(() => setTimeout(() => thx.classList.add('hidden'), 1500))
+            .then(() => drawVisualization())
+            .catch(error => console.error('Error!', error.message))
+        })
+
+
+        function sendChange (sendI, index) {
+          let formData = new FormData()
+          formData.set('value', sendI)
+          formData.set('index', index)
+
+          fetch(scriptURL, { method: 'POST', body: formData})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        }
+
+
+
+
+        function toggleLike (currentValue, currentIndex, listObj) {
+          let I = currentValue.querySelector('i')
+          let index
+          if (currentIndex === 0) {
+            index = 'A2'
+          } else if (currentIndex % 2 === 0) {
+            index = 'A' + ((currentIndex / 2) + 2)
+          } else if (currentIndex % 2 !== 0) {
+            index = 'B' + ((~~(currentIndex/2)) + 2)
+          }
+
+
+
+          if (this.target === currentValue) {
+            I.classList.toggle('hidden')
+            console.log(index)
+
+            sendChange(I.outerHTML, index)
+          } else if (this.target === I) {
+            I.classList.toggle('hidden')
+            console.log(index)
+
+            sendChange(I.outerHTML, index)
+          }
+
+        }
+
+
+        table.addEventListener('click', e => {
+          let likes = table.querySelectorAll('tbody > tr td:first-child, tbody > tr td:nth-of-type(2)')
+          // console.log(likes)
+          likes.forEach(toggleLike, e)
+
+
+        })
+
+
+        function randomInteger(min, max) {
+          var rand = min - 0.5 + Math.random() * (max - min + 1)
+          rand = Math.round(rand);
+          return rand;
+        }
+
+
+        randomNumber.addEventListener('click', function() {
+          let trs = table.querySelectorAll('tbody tr').length
+          this.innerHTML = randomInteger(1, trs)
+        })
+
+
+
+
+
+      </script>
+
+  </div>
+</body>
+</html>

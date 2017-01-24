@@ -1,0 +1,78 @@
+/*Необходимо сверстать поисковую стрелку используя :after и border.
+
+*/
+
+.container1 {
+    width: 70%;
+    height: 106px;
+    overflow: hidden;
+}
+
+div.left {
+    display: inline-block;
+    width: calc(100% - 43px);
+    height: 100px;
+    background: #ffcc66;
+    position: relative;
+    border: 3px solid #ffcc66;
+}
+
+div.left::after {
+    content: "";
+    border-top: 55px solid transparent;
+    border-left: 35px solid #ffcc66;
+    border-bottom: 55px solid transparent;
+    position: absolute;
+    right: -35px;
+    top: -5px;
+}
+
+input.text {
+    display: inline-block;
+    width: calc(100% - 120px);
+    height: 40px;
+}
+
+.button {
+    width: 100px;
+}
+
+1div.tri {
+    float: left;
+    -width: 30%;
+    height: 0;
+    background: darkcyan;
+    border-top: 50px solid wheat;
+    border-left: 50px solid darkblue;
+    border-bottom: 50px solid wheat;
+}
+
+.container2 {
+    width: 70%;
+    height: 106px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #ffeeee, #ffcc66);
+    position: relative;
+}
+
+.tri1 {
+    width: 0;
+    height: 0;
+    border: 26px solid transparent;
+    border-right: 26px solid white;
+    border-bottom: 26px solid white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.tri2 {
+    width: 0;
+    height: 0;
+    border: 26px solid transparent;
+    border-right: 26px solid white;
+    border-top: 26px solid white;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

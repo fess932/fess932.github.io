@@ -1,0 +1,85 @@
+/*В файле task6.html хранится исходный html. В html можно только добавить
+ ссылку на css файл который вы напишете. Ваша задача написать такой css файл,
+который по состоянию checked включать/выключать соответствующие элементы. 
+Макет хранится в файле task6.png. Первая строка - исходный вид. Остальные -
+ как выглядят при нажатии на разные чекбоксы.*/
+
+input {
+    display: none;
+}
+
+div {
+    display: inline;
+}
+
+
+div label[for=red] {
+    text-decoration: underline;
+    color: red;
+}
+
+div label[for=green] {
+    text-decoration: underline;
+    color: green;
+}
+
+div label[for=blue] {
+    text-decoration: underline;
+    color: blue;
+}
+
+:checked+input+input+div .red {
+    color: red;
+    display: none;
+}
+
+:checked+input+div .green {
+    color: green;
+    display: none;
+}
+
+:checked+div .blue {
+    color: blue;
+    display: none;
+}
+
+.red {
+    background: red;
+    color: white;
+    border-radius: 10px 10px 10px 10px;
+    padding: 7px;
+}
+
+.green {
+    background: green;
+    color: white;
+    border-radius: 10px 10px 10px 10px;
+    padding: 7px;
+}
+
+.blue {
+    background: blue;
+    color: white;
+    border-radius: 10px 10px 10px 10px;
+    padding: 7px;
+}
+
+:checked+input+input+div .sred {
+    color: #ffb3b3;
+    text-decoration: underline;
+}
+
+:checked+input+div .sgreen {
+    color: #b3d9b3;
+    text-decoration: underline;
+}
+
+:checked+div .sblue {
+    color: #b3b3ff;
+    text-decoration: underline;
+}
+
+
+
+/*Тыкаешь чекбокс - тот слова с цветом подсвечиваются
+*/

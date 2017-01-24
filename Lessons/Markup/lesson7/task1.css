@@ -1,0 +1,77 @@
+/* 	сделать таблицу проверки зрения, 
+	глазами плохо видящего человека
+	http://clck.ru/d/ubPU44a314BE9
+	http://clck.ru/d/XPwfJrtk14BEv
+*/
+
+.vzor {
+    width: 50%;
+    font-family: Arial, serif;
+    text-align: justify;
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0 0 2px black;
+    font-size: 100px;
+}
+
+.vzor p:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+.uline {
+    border-bottom: 1px solid red;
+}
+
+p {
+    text-align: justify;
+    line-height: 10px;
+}
+
+.sight1 {
+    font-size: 4em;
+}
+
+.sight2 {
+    font-size: 3em;
+}
+
+.sight3 {
+    font-size: 2em;
+}
+
+.sight4 {
+    font-size: 1.5em;
+}
+
+.sight5 {
+    font-size: 1.3em;
+}
+
+.sight6 {
+    font-size: 1.2em;
+}
+
+.sight7 {
+    font-size: 1.1em;
+}
+
+.sight8 {
+    font-size: 1.0em;
+}
+
+.sight9 {
+    font-size: 0.9em;
+}
+
+.sight10 {
+    font-size: 0.8em;
+}
+
+.sight15 {
+    font-size: 0.7em;
+}
+
+.sight20 {
+    font-size: 0.6em;
+}

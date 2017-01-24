@@ -1,0 +1,18 @@
+@font-face {
+    font-family: OleoScript-Bold;
+    src: url(../fonts/OleoScript-Bold.ttf);
+}
+
+@font-face {
+    font-family: OleoScript-Regular;
+    src: url(../fonts/OleoScript-Regular.ttf);
+}
+
+@font-face {
+    font-family: "OxygenMono-Regular";
+    src: url(../fonts/OxygenMono-Regular.otf);
+}
+
+.menu, .header, .content, .list, .footer{
+    
+}

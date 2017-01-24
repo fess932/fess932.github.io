@@ -1,0 +1,174 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  /*  Пример подключения изображения из папки  img */
+}
+
+.container {
+  max-width: 1020px;
+  margin: auto;
+  padding: 0 30px 0 30px;
+}
+
+.header {
+  color: white;
+  padding-top: 32px;
+  padding-bottom: 80px;
+  background-color: #6451d5;
+}
+
+.header .container {
+  background-image: url("../img/bg-promo.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+.menu {
+  float: right;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu a {
+  font-family: "Trebuchet MS";
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  padding-left: 55px;
+}
+
+.promo-text {
+  margin-bottom: 50px;
+}
+
+.promo-text h1 {
+  margin-top: 100px;
+  margin-bottom: 40px;
+  width: 430px;
+  font-family: 'Trebuchet MS';
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 50px;
+}
+
+.promo-text div {
+  width: 320px;
+}
+
+.btn {
+  border: none;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 80px;
+  padding-right: 80px;
+  font-size: 20px;
+  line-height: 24px;
+  color: white;
+  background-color: #382d78;
+  text-transform: uppercase;
+}
+
+.advantages {
+  background-color: #efefef;
+  padding-top: 50px;
+  padding-bottom: 45px;
+  font-size: 0;
+}
+
+.advantages .contents {
+  display: inline-block;
+  position: relative;
+  width: 320px;
+  padding-top: 95px;
+  text-align: center;
+}
+
+.advantages .contents .adv-header {
+  font-family: "Trebuchet MS";
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px
+}
+
+.advantages .contents .adv-text {
+  font-family: "Tahoma";
+  color: #555555;
+  font-size: 18px;
+}
+
+.advantages .adv-content2,
+.advantages .adv-content1 {
+  margin-right: 30px;
+}
+
+.contents .adv-header:before {
+  content: url(../img/calendar.png);
+  position: absolute;
+  top: 0;
+  left: 130px;
+}
+
+.adv-content2 .adv-header:before {
+  content: url(../img/tools.png);
+}
+
+.adv-content3 .adv-header:before {
+  content: url(../img/pc.png);
+}
+
+.table {
+  background-color: white;
+}
+
+.table h1{
+  font-size: 45px;
+  font-family: "Trebuchet MS";
+  line-height: 50px;
+  margin: 0;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.table table {
+  border-collapse: collapse;
+}
+
+.table table th {
+  font-weight: normal;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 25px;
+  width: 
+}
+
+.table table th:nth-child(1) {
+  padding-right: 175px;
+}
+
+.table table th:nth-child(2) {
+  padding-right: 45px;
+}
+
+.table table td,
+.table table th {
+  border: 2px solid #a7a7a7;
+}
+
+.table table thead {
+  background-color: #efefef;
+}
+
+.table table tr td {
+  padding-top: 25px;
+  padding-left: 33px;
+  padding-bottom: 25px
+}
+
+

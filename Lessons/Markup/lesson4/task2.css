@@ -1,0 +1,42 @@
+/*
+Необходимо сверстать меню из макета menu2.png использую float.
+
+Линия растянута на всю ширину страницы. Само меню шириной 900px и центрируется.*/
+
+* {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.line{
+    background:#a64dff; 
+    box-shadow: 0 0 4px rgba(0,0,0,0.5)  ;
+}
+
+li:hover{
+    background: #eeeeee;
+    color: #9fa0b4;
+}
+
+ul {
+    margin: auto;
+    display: block;
+    padding-left: 10px;
+    padding-left: 10px;
+    width: 900px;
+    height: 30px;
+    list-style: none;
+    background: #a64dff;
+    color: #fff;
+}
+
+li {
+    float: left;
+    padding: 5px;
+    height: 20px;
+}
+
+li:last-child{
+    float: right;
+    
+}
+

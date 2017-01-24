@@ -1,0 +1,223 @@
+    #banner {
+        background-image: url(banner-bg.jpg);
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        color: whitesmoke;
+        text-align: center;
+        padding: 140px 0 105px 0;
+    }
+    
+    #banner .banner1 {
+        font-size: 36pt;
+        font-family: 'Century Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: normal;
+        margin-bottom: 15px;
+    }
+    
+    #banner .banner1 span {
+        font-size: 48pt;
+        font-family: 'Century Gothic', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    
+    #banner .banner2 {
+        font-size: 20pt;
+        font-family: Calibri, 'Trebuchet MS', sans-serif;
+        font-style: italic;
+        line-height: 30pt;
+        margin-bottom: 35px;
+    }
+    
+    #banner input {
+        border: 1px solid white;
+        padding: 20px 60px 20px 60px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16pt;
+        background-color: rgba(0, 0, 0, 0);
+        color: white;
+    }
+    
+    #header {
+        position: relative;
+        height: 115px;
+        padding-top: 35px;
+    }
+    
+    #header .company-name {
+        float: left;
+        word-spacing: 5pt;
+        padding-top: 10px;
+    }
+    
+    #header .name1 {
+        color: #ee8129;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 36pt;
+    }
+    
+    #header .name2 {
+        color: #3070a8;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 36pt;
+        font-weight: 900;
+    }
+    
+    #header .menu {
+        float: right;
+        position: relative;
+        bottom: -60%;
+    }
+    
+    #header a {
+        padding-bottom: 5%;
+        padding-right: 10px;
+        padding-left: 10px;
+        color: #3070a8;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    
+    #header a:hover {
+        border-bottom: 6px solid #3070a8;
+        position: relative;
+        bottom: 7px;
+    }
+    
+    #features {
+        color: #2d6ba1;
+        margin: 0 0 60px 0;
+    }
+    
+    .feature {
+        width: 310px;
+        display: inline-block;
+        padding: 0 25px 0 25px;
+        font-size: 14pt;
+        font-family: Open Sans;
+    }
+    
+    .fearutes-header {
+        margin-top: 40px;
+        margin-bottom: 80px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: bold;
+        font-size: 30pt;
+        text-transform: uppercase;
+    }
+    
+    .feature img {
+        margin-bottom: 35px;
+    }
+    
+    .feature h2 {
+        margin-bottom: 30px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+        font-size: 30pt;
+        text-transform: uppercase;
+    }
+    
+    .feature div {
+        color: #999999;
+    }
+    /** контентный блок с заголовками и 
+списком (на темном фоне с мужчиной и женщиной) */
+    
+    div#content {
+        background-image: url(content-bg.jpg);
+        background-size: 100%;
+        width: 100%;
+        color: white;
+        font-family: 'Raleway', sans-serif;
+        font-size: 26pt;
+    }
+    
+    #content h2 {
+        text-align: left;
+        padding-top: 90px;
+    }
+    
+    #content div {
+        width: 725px;
+        display: inline-block;
+        padding-right: 375px;
+        text-align: left;
+    }
+    
+    #content ul {
+        width: 650px;
+    }
+    
+    #content li {
+        text-align: left;
+        padding: 25px 0 25px 0;
+        font-size: 14pt;
+        color: #9d9d9d;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+    /** блок с контактами*/
+    /** footer*/
+    
+    #contacts .social {
+        text-align: left;
+        padding-top: 10px;
+    }
+    
+    .social img {
+        padding-right: 10px;
+    }
+    
+    #contacts .map {
+        float: right;
+        width: 50%;
+    }
+    
+    .contact {
+        width: 507px;
+        height: 345px;
+        float: right;
+    }
+    
+    .contacts {
+        padding-left: 60px;
+        padding-top: 50px;
+        position: relative;
+    }
+    
+    .contacts div {
+        padding-bottom: 20px;
+        text-align: left;
+    }
+    
+    .iconic:before {
+        content: url(uk.png);
+        position: absolute;
+        left: 10px;
+    }
+    
+    .phone:before {
+        content: url(mobile.png);
+        position: absolute;
+        left: 10px;
+    }
+    
+    .mail:before {
+        content: url(mail.png);
+        position: absolute;
+        left: 10px;
+    }
+    
+    #footer {
+        float: left;
+        height: 105px;
+        width: 100%;
+        background-color: #3070a8;
+        color: white;
+        padding: 25px 0 30px 0;
+    }
+    
+    .IconicGraphicscom {
+        color: black
+    }

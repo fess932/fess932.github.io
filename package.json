@@ -1,0 +1,29 @@
+{
+  "name": "fess932.github.io",
+  "version": "1.0.0",
+  "description": "New era",
+  "main": "index.js",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "lodash": "^4.17.4",
+    "winamp2-js": "0.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fess932/fess932.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fess932/fess932.github.io/issues"
+  },
+  "homepage": "https://github.com/fess932/fess932.github.io#readme",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": []
+}
