@@ -1,0 +1,4 @@
+function smile() {
+document.getElementById("smile").style.backgroundPosition="-606px -480px";
+setTimeout('document.getElementById("smile").style.backgroundPosition="-418px -480px"', 400)
+}

@@ -1,0 +1,151 @@
+html, body {
+margin: 0px;
+padding: 0px;
+background: #fff;
+background-image: url(graphics/fon.png);
+}
+
+.header {clear:both; background-color: #c96; background-image: url(graphics/fonh.gif); height: 160px; min-width: 790px;}
+.spite_webremeslo {float:left; height: 160px; width: 490px; background-image: url(graphics/sprite.png); background-repeat: no-repeat;}
+.spite_webremeslo:hover {background-position: 0px -160px;}
+.header2 {width:300px; height: 160px; float:right; background-image: url(graphics/sprite.png); background-position: -494px 0px; background-repeat: no-repeat;}
+.header3 {margin: 70px 0px 0px 16px;}
+
+.left {float: left; width: 200px; padding-top: 30px;}
+.right {float: right; width: 200px; padding-top: 30px;}
+.center {margin:0 200px; background: #fff; padding: 10px; border-left: #392d21 5px solid; border-right: #392d21 5px solid;}
+
+.nav {clear:both;}
+.left_nav {float: left; width: 188px;}
+#smile {float: right; width: 188px; background-image: url(graphics/sprite.png); background-position: -418px -480px;}
+
+.spite_map {float: left; width: 45px; background-image: url(graphics/sprite.png); background-position: 0px -480px; line-height: 0px; font-size: 0px;}
+.spite_map:hover {background-position: -45px -480px;}
+.spite_forum {float: right; width: 45px; background-image: url(graphics/sprite.png); background-position: -90px -480px; line-height: 0px; font-size: 0px;}
+.spite_forum:hover {background-position: -135px -480px;}
+.center_nav {margin: 0px 188px; background: #fff;}
+.nav_url{height: 130px; overflow: hidden; text-align: center; font-size: 14px;}
+
+.footer {clear:both; background-color: #c96; background-image: url(graphics/fonf.gif); height: 80px; min-width: 790px;}
+.spite_author {float:left; height: 80px; width: 482px; background-image: url(graphics/sprite.png); background-position: 0px -320px; background-repeat: no-repeat; line-height: 0px; font-size: 0px;}
+.spite_author:hover {background-position: 0px -400px;}
+.footer2 {float:right; height: 80px; width: 270px; background-image: url(graphics/sprite.png); background-position: -524px -160px; background-repeat: no-repeat;}
+.footer3 {margin: 25px 0px 0px 27px;}
+
+.menu {display:block; background: url(graphics/sprite.png); background-position: -594px -240px; background-repeat: no-repeat; background-color: #c96; margin-top: 1px; color:#fff; font-size: 14px; text-decoration: none; font-weight: bold; padding-left: 40px; height:24px; cursor:pointer;} 
+.menu:hover {display:block; background: url(graphics/sprite.png); background-position: -594px -264px; background-repeat: no-repeat; background-color: #8b4513; margin-top: 1px; color:#fff; font-size: 14px; text-decoration: none; font-weight: bold; padding-left: 40px; cursor:pointer;}
+.activemenu {display:block; background: url(graphics/sprite.png); background-position: -594px -264px; background-color: #8b4513; margin-top: 1px; color:#fff; font-size: 14px; text-decoration: none; font-weight: bold; padding-left: 40px; height:24px; cursor:pointer;}
+.activemenu:hover {color:#fff;}
+
+.pmenu {display:block; background: url(graphics/bymaga.gif); background-color: #fff8dc; color:#392d21; text-decoration: none; font-weight: bold; padding: 2px 0px 2px 20px; cursor:pointer; font-size: 14px;}
+.activepmenu {display:block; background: url(graphics/abymaga.gif); background-color: #c2b98f; color:#800000; text-decoration: none; font-weight: bold; padding: 2px 0px 2px 20px; cursor:pointer; font-size: 14px;}
+.pmenu:hover {background: url(graphics/abymaga.gif); background-color: #c2b98f;}
+
+.ppmenu {display:block; background: url(graphics/bymaga.gif); background-color: #fff8dc; color:#392d21; font-size: 12px; text-decoration: none; font-weight: bold; padding: 2px 15px 2px 35px; cursor:pointer;}
+.ppmenu:hover {background: url(graphics/abymaga.gif); background-color: #c2b98f;}
+.activeppmenu {display:block; background: url(graphics/abymaga.gif); background-color: #fff8dc; font-size: 12px; text-decoration: none; font-weight: bold; padding: 2px 15px 2px 35px; cursor:pointer; color:#800000;}
+
+
+.sprite_anekdot{width: 198px; height: 40px; background-image: url(graphics/sprite.png); background-position: -594px -288px; background-color: #c96;}
+.sprite_advertisment{width: 198px; height: 40px; background-image: url(graphics/sprite.png); background-position: -594px -328px; background-color: #c96;}
+.sprite_planka {width: 198px; height:24px; background: url(graphics/sprite.png); background-position: -594px -240px; background-repeat: no-repeat; background-color: #c96;}
+.sprite_rss {border: 0px; width: 14px; height:14px; background: url(graphics/sprite.png); background-position: -180px -594px; background-repeat: no-repeat;}
+.sprite_forum {border: 0px; width: 14px; height:14px; background: url(graphics/sprite.png); background-position: -196px -594px; background-repeat: no-repeat;}
+
+
+.anekdot {background:url(graphics/bymaga.gif); background-color: #fff8dc; padding: 20px; color:#392d21; font-size: 14px;}
+
+.reklama {background:url(graphics/bymaga.gif); background-color: #fff8dc;}
+
+.advertisment {display: block; background:url(graphics/bymaga.gif); padding: 15px; background-color:#fff8dc;}
+.faq {border: 2px solid #dcdcdc; background-color: #ffffff; text-align: left; margin: 5px 20px 10px 20px; padding: 5px; height: 80px; width: auto; overflow: auto;}
+
+.primer{ 
+  width: 97%;
+  border-left: 10px solid #392d21;
+  border-right: 1px solid #c96;
+  border-top: 1px solid #c96;
+  border-bottom: 1px solid #c96;
+  margin-left: 5px;
+  padding-left: 5px;
+  background:#fafad2;
+}
+
+a { 
+color:#392d21; 
+font-weight: bold; 
+
+} 
+
+a:hover { 
+ color:#800000;
+ font-weight: bold;  
+} 
+
+.zag {text-align: center; font-size: 18px; font-weight: bold; color:#392d21;}
+h1 {text-align: center; font-size: 22px; font-weight: bold; color:#392d21;}
+h2 {text-align: center; font-size: 18px; font-weight: bold; color:#392d21;}
+h3 {text-align: center; font-size: 16px; font-weight: bold; color:#392d21;}
+
+p{
+text-indent: 10px;
+font-family: verdana, arial, sans-serif;
+font-size: 12px; line-height: 16px;
+} 
+p:first-letter {
+font-size: large; 
+color:#554015;
+}
+
+li{
+list-style-image: url('graphics/ul.gif');
+}
+
+b{
+ padding: 3px;
+ color:#000000;
+}
+
+
+.active{color:#800000;}
+.no_active{color:#392d21;}
+.no_active:hover{color:#392d21;}
+
+th{text-align: center; font-size: 18px; font-weight: bold; color:#ffffff; background-color: #554015;}
+.trc{text-align: center; color:#000000; background-color: #deb887;}
+.trn{text-align: center; color:#000000; background-color: #fafad2;}
+.tdl{text-align: left; color:#000000;}
+
+samp{
+font-family: arial;
+font-size: small;
+line-height: 20px
+}
+
+samp.x {padding-left: 15px; font-family: arial; font-size: small; line-height: 20px}
+samp.xx {padding-left: 30px; font-family: arial; font-size: small; line-height: 20px }
+samp.xxx {padding-left: 45px; font-family: arial; font-size: small; line-height: 20px}
+samp.xxxx {padding-left: 60px; font-family: arial; font-size: small; line-height: 20px}
+samp.xxxxx {padding-left: 75px; font-family: arial; font-size: small; line-height: 20px}
+
+input[size="24"]{width:180px;} 
+
+#tooltip{
+  background:url(graphics/fontooltip.gif);
+  background-color: #392d21;
+  border-left: 1px solid #deb887;
+  border-right: 3px solid #392d21;
+  border-top: 1px solid #deb887;
+  border-bottom: 3px solid #392d21;
+  color:#e0ffff;
+  margin:5px;
+  padding:5px 5px;
+  position:absolute;
+  visibility:hidden;
+  border-radius: 5px 5px;
+  font-family: arial, sans-serif;
+  font-size: 12px; line-height: 14px;
+}
+
+#share42 a {opacity: 0.9;}
+#share42 a:hover {opacity: 1;}
