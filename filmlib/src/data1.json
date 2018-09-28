@@ -1,13 +1,12 @@
 {
-  "categories": {},
+  "categories": {
+    "anime": ["001"],
+    "movies": ["002"]
+  },
   "films": {
-    "001": {
-      "label": "hell",
-      "tags": ["wow", "shit"],
-      "averageScore": "5,4"
-      },
+     
     "002": {
-      "label": "whall",
+      "title": "whall",
       "tags": ["waw", "good"],
       "averageScore": "9"
     }
@@ -18,6 +17,53 @@
     "usersCount": 14,
     "usersOnline": 0
   },
-  "comments": {},
-  "users": {}
+  "comments": {
+    "-KsjWehQ--apjDBwSBCZ": {
+      "edited": {
+        "at": 1504037546,
+        "by": "ALXhxjwgY9PinwNGHpfai6OWyDu2",
+        "moderated": false
+      },
+      "publishedAt": 1504035908,
+      "text": "I'm curious to know what kind of pets the forum users have. I thought this could be a nice way to get to know each other a little better, so I'll start!\n\nMy dog is a five month old Italian mastiff (Cane Corso). Since I got him from Barcelona I thought a Spanish name would be suitable, and I named him Don Jefe, or Jefe for short (which means \"boss man\").\n\nJefe is a cute, little beast who eats 1.5 kg raw meat every day. He love to fart, snore and play.\n\nHere's Jefe with his Instagram hat and sqeaky ball 🎉🎉🎉\n![Don Jefe](http://i.imgur.com/XCWzR6l.jpg)\n",
+      "threadId": "-KsjWehQ--apjDBwSBCY",
+      "userId": "ALXhxjwgY9PinwNGHpfai6OWyDu2",
+      ".key": "-KsjWehQ--apjDBwSBCZ"
+    }
+  },
+  "users": {
+    "7uVPJS9GHoftN58Z2MXCYDqmNAh2": {
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/forum-2a982.appspot.com/o/images%2Favatars%2Ftunajoe?alt=media&token=dcc2eb1d-81a5-4e82-8774-bb97be7c3128",
+      "bio": "Love to fish. Work to fish",
+      "email": "tunajoe@gmail.com",
+      "lastVisitAt": 1507227517,
+      "name": "Joey Williams",
+      "posts": {
+        "-Kvd3TvfJogbWreitADe": "-Kvd3TvfJogbWreitADe",
+        "-KvdBp4adHJpppQWc3sJ": "-KvdBp4adHJpppQWc3sJ",
+        "-KvdDmJtvxFMHECuKKLX": "-KvdDmJtvxFMHECuKKLX",
+        "-KvdFbzM8tu64CKVW60V": "-KvdFbzM8tu64CKVW60V",
+        "-KvfyDwSUGBojOO4OKyY": "-KvfyDwSUGBojOO4OKyY",
+        "-KvgM0hiRDPqJzuJgnLv": "-KvgM0hiRDPqJzuJgnLv",
+        "-KvgOAeYDKON22qBjHWR": "-KvgOAeYDKON22qBjHWR",
+        "-KvgWFVq1pX_QbFmlG-5": "-KvgWFVq1pX_QbFmlG-5",
+        "-KvgWYb4YkaFCfCzA_Ck": "-KvgWYb4YkaFCfCzA_Ck",
+        "-KvgbTO3-L9eOTzrxhs3": "-KvgbTO3-L9eOTzrxhs3",
+        "-KvgeSqPO7yMjOPbSYB2": "-KvgeSqPO7yMjOPbSYB2"
+      },
+      "registeredAt": 1507148598,
+      "threads": {
+        "-Kvd3TvfJogbWreitADd": "-Kvd3TvfJogbWreitADd",
+        "-KvdBp4adHJpppQWc3sI": "-KvdBp4adHJpppQWc3sI",
+        "-KvdDmJtvxFMHECuKKLW": "-KvdDmJtvxFMHECuKKLW",
+        "-KvfyDwSUGBojOO4OKyX": "-KvfyDwSUGBojOO4OKyX",
+        "-KvgOAeYDKON22qBjHWQ": "-KvgOAeYDKON22qBjHWQ",
+        "-KvgWYb4YkaFCfCzA_Cj": "-KvgWYb4YkaFCfCzA_Cj",
+        "-KvgeSqPO7yMjOPbSYB1": "-KvgeSqPO7yMjOPbSYB1"
+      },
+      "username": "tunajoe",
+      "usernameLower": "tunajoe",
+      ".key": "7uVPJS9GHoftN58Z2MXCYDqmNAh2"
+    }
+  }
 }
