@@ -1,0 +1,23 @@
+{
+  "categories": {},
+  "films": {
+    "001": {
+      "label": "hell",
+      "tags": ["wow", "shit"],
+      "averageScore": "5,4"
+      },
+    "002": {
+      "label": "whall",
+      "tags": ["waw", "good"],
+      "averageScore": "9"
+    }
+ },
+  "stats": {
+    "filmsCount": 23,
+    "commentsCount": 5,
+    "usersCount": 14,
+    "usersOnline": 0
+  },
+  "comments": {},
+  "users": {}
+}
