@@ -1,16 +1,10 @@
 <template>
   <div>
 
+    <h1>Welcome to the film list</h1>
 
-    <h1>Welcome to the list of Things</h1>
-    <div :key="film.id" v-for="film in films" class="thing">
-      <h2>{{film.title}}</h2>
-      <div :key="tag.id" v-for="tag in film.tags">
-        <span>{{tag}}</span>
-      </div>
-    </div>
-
-
+   <FilmList/>
+   
   </div>
 </template>
 
