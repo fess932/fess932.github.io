@@ -2,26 +2,40 @@
   <div>
 
     <h1>Welcome to the film list</h1>
+    <h3 :key="film.id" v-for="film in films">
+      <h3>{{film.label}}</h3>
+      <img :src="film.picture" alt="">
+      <p>{{film.country}}</p>
+      <p>{{film.year}}</p>
+      <span :key="genre.id" v-for="genre in film.genres">
+        {{genres[genre]}}
+      </span>
+      <h4>
+        <div :key="rating.id" v-for="rating in film.ratings">
+          <span>User name {{users[rating.uid].userName}} </span>
+          <span>{{rating.userRating}} </span>
+        </div>
+      </h4>
+      <p>{{film.about}}</p>
 
-   <FilmList/>
-   
+    </h3>
+
   </div>
 </template>
 
 <script>
-import sourceData from '@/data1'
-import FilmList from './FilmList '
+import sourceData from '@/moc'
+// import FilmList from './FilmList '3
 console.log(sourceData)
 export default {
   name: 'HelloWorld',
-  components: {
-    FilmList
-  },
   data () {
     return {
       films: sourceData.films,
-      comments: sourceData.comments,
-      categories: sourceData.categories,
+      picture: sourceData.picture,
+      year: sourceData.year,
+      country: sourceData.country,
+      genres: sourceData.genres,
       users: sourceData.users
     }
   }
