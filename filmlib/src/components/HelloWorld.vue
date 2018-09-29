@@ -10,9 +10,13 @@
 
 <script>
 import sourceData from '@/data1'
+import FilmList from './FilmList '
 console.log(sourceData)
 export default {
   name: 'HelloWorld',
+  components: {
+    FilmList
+  },
   data () {
     return {
       films: sourceData.films,
