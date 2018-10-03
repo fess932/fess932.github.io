@@ -14,6 +14,9 @@
   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
   <script src="https://www.google.com/jsapi" type="text/javascript"></script>
 </head>
+<div id="vuefun">
+ Ваш ip : {{ IP }}
+</div>
 <iframe  frameborder="no" scrolling="no" width="280" height="150" src="https://yandex.ru/time/widget/?geoid=36&lang=ru&layout=horiz&type=digital&face=serif"></iframe>
 <body id="background">
   <div id="box">
@@ -146,7 +149,16 @@
 
 
       </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+  <script type="text/javascript" src="http://ip-jobs.staff-base.spb.ru/ip.cgi"></script>
+  <script>
+    new Vue({
+      el : "#vuefun",
+      data: {
+        ip: IP
+      }
+    })
+  </script>
   </div>
 </body>
 </html>
