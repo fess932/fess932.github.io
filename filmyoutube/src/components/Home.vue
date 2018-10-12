@@ -155,6 +155,10 @@
             span.tag-title {{ tag.title }}
             span.button-close
         p {{ tagsUsed }}
+        .button-list
+          .button.button--round.button-primary(
+            @click="newTask"
+          ) Send
 </template>
 
 <script>
@@ -168,9 +172,8 @@ export default {
       taskDescription: '',
       whatWatch: 'Anime',
       image: "",
-      taskId: 3,
       tagMenuShow: false,
-
+      tagTitle: "",
       // Total Time
       // Film
       filmHours: 1,
@@ -193,7 +196,7 @@ export default {
         },
         {
           title: 'Westerns',
-          use: true
+          use: false
         },
         {
           title: 'Cats',
@@ -203,6 +206,15 @@ export default {
     }
   },
   methods: {
+    newTag() {
+      if (this.tagTitle === '') {
+        return
+      }
+      this.tags.push({
+        title: this.tagTitle,
+        used: false
+      })
+    },
     newTask () {
       if(this.taskTitle === ''){
         return
@@ -221,26 +233,28 @@ export default {
       }
 
       const task = {
-        id: this.taskId,
         title: this.taskTitle,
         description: this.taskDescription,
         whatWatch: this.whatWatch,
         time,
+        tags: this.tagsUsed,
         completed: false,
         editing: false
       }
+
+      this.$store.dispatch('newTask', task)
       console.log(task)
       // RESET
-      this.taskId++
       this.taskTitle = ''
       this.taskDescription = ''
+      this.tagsUsed = []
     },
     addTagUsed(tag) {
       tag.use = !tag.use
       if(tag.use) {
-        this.tagsUsed.push(
-          tag.title
-        )
+        this.tagsUsed.push({
+          title: tag.title
+        })
       } else {
         _.pull(this.tagsUsed, tag.title)
       }
@@ -330,4 +344,8 @@ img
   margin-bottom 0
   margin-right 10px
   height 42px
+// btutton enter
+.button-list
+  display flex
+  justify-content flex-end
 </style>

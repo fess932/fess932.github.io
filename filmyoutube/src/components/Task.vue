@@ -2,10 +2,22 @@
   .content-wrapper
     section
       .container
-        h1.ui-title-1 Tasks
+        .task-list__header
+          h1.ui-title-1 Tasks
+          .buttons-list
+            p {{ filter }}
+            .button.button--round.button-default(
+              @click="filter = 'active'"
+            ) Active
+            .button.button--round.button-default(
+              @click="filter = 'completed'"
+            ) Completed
+            .button.button--round.button-default(
+              @click="filter = 'all'"
+            ) All
         .task-list
           .task-item(
-            v-for="task in tasks"
+            v-for="task in tasksFilter"
             :key="task.id"
             :class="{ completed: task.completed }"
           )
@@ -13,7 +25,7 @@
               .task-item__info
                 .task-item__main-info
                   span.ui-label.ui-label--light {{ task.whatWatch }}
-                  span № {{ task.id }} Total Time:
+                  span № {{ task.id }} Total Time: {{ task.time }}
                 span.button-close
               .task-item__content
                 .task-item__header
@@ -25,31 +37,40 @@
                   span.ui-title-3 {{ task.title }}
                 .task-item__body
                   p.ui-text-regular {{ task.description }}
+                .task-item__footer
+                  .tag_list
+                    .ui-tag__wrapper(
+                      v-for="tag in task.tags"
+                      :key="tag.title"
+                    )
+                      .ui-tag
+                        span.tag-title {{ tag.title }}
+
 
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      tasks: [
-        {
-          'id': 1,
-          'title': 'Ashes',
-          'description': 'Блестящий, но одержимый профессор, работает над изобретением вакцины от СПИДа. Случайно в своей лаборатории он изобретает новый вид смертоносных бактерий, которые мгновенно разрушают тело и приводят мозг в агрессивное состояние. Теперь он должен остановить инфекцию прежде, чем она погубит его, и тех кого он любит.',
-          'whatWatch': 'Film',
-          'completed': false,
-          'editing': false
-        },
-        {
-          'id': 2,
-          'title': 'Breaking Bad',
-          'description': 'Школьный учитель химии Уолтер Уайт узнаёт, что болен раком лёгких. Учитывая сложное финансовое состояние дел семьи, а также перспективы, Уолтер решает заняться изготовлением метамфетамина. Для этого он привлекает своего бывшего ученика Джесси Пинкмана, когда-то исключённого из школы при активном содействии Уайта. Пинкман сам занимался «варкой мета», но накануне, в ходе рейда УБН, он лишился подельника и лаборатории…',
-          'whatWatch': 'Serial',
-          'completed': false,
-          'editing': false
-        }
-      ]
+      filter: 'active'
+    }
+  },
+  computed: {
+    tasksFilter () {
+      switch (this.filter) {
+        case 'active':
+          return this.$store.getters.taskNotCompleted
+          break;
+        case 'completed':
+          return this.$store.getters.taskCompleted
+          break;
+        case 'all':
+          return this.$store.getters.tasks
+          break;
+      }
+    },
+    tasks () {
     }
   }
 }
