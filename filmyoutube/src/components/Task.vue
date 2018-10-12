@@ -77,10 +77,32 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+
+.task-list__header
+  display flex
+  justify-content space-between
+  align-items center
+  margin-bottom 30px
+  .button
+    margin-right 8px
+  .ui-title-1
+    margin-bottom 0
+
 .task-item
   margin-bottom 20px
+  .ui-checkbox:checked:before
+    border-color #909399
+  &.completed
+    .ui-title-3,
+    .ui-text-regular,
+    .ui-tag
+      text-decoration line-through
+      color #909399
   &:last-child
     margin-bottom 0
+
+.total-time
+  margin-bottom 20px
 
 .ui-label
   margin-right 8px
@@ -94,6 +116,7 @@ export default {
     width 20px
     height @width
 
+
 .task-item__header
   display flex
   align-items center
@@ -102,4 +125,10 @@ export default {
     margin-right 8px
   .ui-title-3
     margin-bottom 0
+
+.ui-tag__wrapper
+  margin-right 8px
+  &:last-child
+    margin-right 0
+
 </style>

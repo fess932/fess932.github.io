@@ -188,21 +188,7 @@ export default {
       animeSeriesMinutes: 24,
 
       // tags
-      tagsUsed: [],
-      tags: [
-        {
-          title: 'Comedy',
-          use: false
-        },
-        {
-          title: 'Westerns',
-          use: false
-        },
-        {
-          title: 'Cats',
-          use: false
-        },
-      ]
+      tagsUsed: []
     }
   },
   methods: {
@@ -210,10 +196,11 @@ export default {
       if (this.tagTitle === '') {
         return
       }
-      this.tags.push({
+      const tag = {
         title: this.tagTitle,
-        used: false
-      })
+        use: false
+      }
+      this.$store.dispatch('newTag', tag)
     },
     newTask () {
       if(this.taskTitle === ''){
@@ -248,6 +235,10 @@ export default {
       this.taskTitle = ''
       this.taskDescription = ''
       this.tagsUsed = []
+      
+      for (let i = 0; i < this.tags.length; i++){
+        this.tags[i].use = false
+      }
     },
     addTagUsed(tag) {
       tag.use = !tag.use
@@ -256,7 +247,8 @@ export default {
           title: tag.title
         })
       } else {
-        _.pull(this.tagsUsed, tag.title)
+        // _.pull(this.tagsUsed, tag)
+        this.tagsUsed.splice(tag.title, 1)
       }
     },
     getHoursAndMinutes(minutes) {
@@ -266,6 +258,10 @@ export default {
     }
   },
   computed: {
+    tags () {
+      return this.$store.getters.tags
+    }, 
+
     filmTime () {
       let min = this.filmHours * 60 + this.filmMinutes
       return this.getHoursAndMinutes(min)
