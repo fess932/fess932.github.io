@@ -235,7 +235,7 @@ export default {
       this.taskTitle = ''
       this.taskDescription = ''
       this.tagsUsed = []
-      
+
       for (let i = 0; i < this.tags.length; i++){
         this.tags[i].use = false
       }
@@ -247,16 +247,8 @@ export default {
           title: tag.title
         })
       } else {
-
-        ////////////////////// TODO
-        _.remove(this.tagsUsed, tag => tag.title )
-        // _.pull(this.tagsUsed, tag)
-        // this.tagsUsed.splice(tag.title, 1)
-        // _.remove(this.tagsUsed, function (item) {
-        //   return item.title === this.tagsUsed
-        // });
-        // _.remove(this.tagsUsed, {tag})
-        console.log(tag)
+        ////////////////////// remove obj from array
+        _.remove(this.tagsUsed, n => n.title === tag.title)
       }
     },
     getHoursAndMinutes(minutes) {
@@ -268,7 +260,7 @@ export default {
   computed: {
     tags () {
       return this.$store.getters.tags
-    }, 
+    },
 
     filmTime () {
       let min = this.filmHours * 60 + this.filmMinutes
