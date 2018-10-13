@@ -247,8 +247,16 @@ export default {
           title: tag.title
         })
       } else {
+
+        ////////////////////// TODO
+        _.remove(this.tagsUsed, tag => tag.title )
         // _.pull(this.tagsUsed, tag)
-        this.tagsUsed.splice(tag.title, 1)
+        // this.tagsUsed.splice(tag.title, 1)
+        // _.remove(this.tagsUsed, function (item) {
+        //   return item.title === this.tagsUsed
+        // });
+        // _.remove(this.tagsUsed, {tag})
+        console.log(tag)
       }
     },
     getHoursAndMinutes(minutes) {
