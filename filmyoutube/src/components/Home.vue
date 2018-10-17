@@ -192,7 +192,7 @@ export default {
     }
   },
   methods: {
-    newTag() {
+    newTag() {§
       if (this.tagTitle === '') {
         return
       }
