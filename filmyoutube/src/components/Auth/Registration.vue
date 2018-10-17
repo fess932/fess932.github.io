@@ -18,17 +18,17 @@
                 )
                 .error(v-if="!$v.email.required") Field is required
                 .error(v-if="!$v.email.email") Email is not correct
-              
+
               .form-item(:class="{ 'errorInput': $v.password.$error }")
                 input(
                   type="password"
                   placeholder="Password"
                   v-model="password"
                   :class="{ 'error': $v.password.$error }"
-                  @change="$v.password.$touch()"                  
+                  @change="$v.password.$touch()"
                 )
                 .error(v-if="!$v.password.required") Password is required.
-                .error(v-if="!$v.password.minLength") 
+                .error(v-if="!$v.password.minLength")
                   | Password must have at least {{ $v.password.$params.minLength.min }} letters.
 
 
@@ -38,7 +38,7 @@
                   placeholder="Repeat your password"
                   v-model="repeatPassword"
                   :class="{ 'error': $v.repeatPassword.$error }"
-                  @change="$v.repeatPassword.$touch()"                  
+                  @change="$v.repeatPassword.$touch()"
                 )
                 .error(v-if="!$v.repeatPassword.sameAsPassword") Passwords must be identical.
               .buttons-list
@@ -46,15 +46,20 @@
                   type="submit"
                   :disabled="submitStatus === 'PENDING'"
                 ) Registration
-                p.typo__p(v-if="submitStatus === 'OK'") Thanks for your submission!
-                p.typo__p(v-if="submitStatus === 'ERROR'") Please fill the form correctly.
-                p.typo__p(v-if="submitStatus === 'PENDING'") Sending...
+                .buttons-list.buttons-list--info
+                  p.typo__p(v-if="submitStatus === 'OK'") Thanks for your submission!
+                  p.typo__p(v-if="submitStatus === 'ERROR'") Please fill the form correctly.
+                  p.typo__p(v-if="submitStatus === 'PENDING'") Sending...
+
+                .buttons-list.buttons-list--info
+                  span Do you have account?
+                    router-link(to="/login")   Enter here
 
 </template>
 
 <script>
 import { required, email, minLength, sameAs } from 'vuelidate/lib/validators'
- 
+
 export default {
   data() {
     return {
@@ -120,6 +125,17 @@ export default {
 input
   &.error
     border-color #fc5c65
+
+.buttons-list
+  text-align right
+  margin-bottom 20px
+  &.buttons-list--info
+    text-align center
+    &:last-child
+      margin-bottom 0
+
+a
+  color #444ce0
 
 
 </style>
