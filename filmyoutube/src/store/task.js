@@ -4,6 +4,7 @@ export default {
       {
         'id': 1,
         'title': 'Ashes',
+        'time': '100 hours',
         'description': 'Блестящий, но одержимый профессор, работает над изобретениелжен остановить инфекцию прежде, чем она погубит его, и тех кого он любит.',
         'whatWatch': 'Film',
         'completed': false,

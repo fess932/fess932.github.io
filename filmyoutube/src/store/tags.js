@@ -12,7 +12,7 @@ export default {
       {
         title: 'Cats',
         use: false
-      },
+      }
     ]
   },
   mutations: {
@@ -21,7 +21,7 @@ export default {
     }
   },
   actions: {
-    newTag({commit}, payload) {
+    newTag ({commit}, payload) {
       commit('newTag', payload)
     }
 

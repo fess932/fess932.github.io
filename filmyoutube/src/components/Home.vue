@@ -3,171 +3,185 @@
     section
       .container
         h1.ui-title-1 Home
-        input(
-          type="text"
-          placeholder="What we will watch?"
-          v-model="taskTitle"
-          @keyup.enter="newTask"
-        )
-        input(
-          type="text"
-          placeholder="Image url"
-          v-model="image"
-          @keyup.enter="newTask"
-        )
-        textarea(
-          type="text"
-          v-model="taskDescription"
-          @keyup.enter="newTask"
-        )
-        .option-list
-          // ANIME
-          input.what-watch--radio(
-            type="radio"
-            id="radioAnime"
-            value="Anime"
-            v-model="whatWatch"
-          )
-          label(
-            for="radioAnime"
-          ) Anime
+        form(@submit.prevent="onSubmit")
+          .form-item(:class="{ errorInput: $v.taskTitle.$error }")
+            input(
+              type="text"
+              placeholder="What we will watch?"
+              v-model="taskTitle"
+              @change="$v.taskTitle.$touch()"
+              :class="{ error: $v.taskTitle.$error }"
+            )
+            .error(v-if="!$v.taskTitle.required") Title is required.
+          .form-item
+            input(
+              type="text"
+              placeholder="Image url"
+              v-model="image"
+              @keyup.enter="newTask"
+            )
+          .form-item
+            textarea(
+              type="text"
+              v-model="taskDescription"
+              @keyup.enter="newTask"
+            )
+          .option-list
+            // ANIME
+            input.what-watch--radio(
+              type="radio"
+              id="radioAnime"
+              value="Anime"
+              v-model="whatWatch"
+            )
+            label(
+              for="radioAnime"
+            ) Anime
 
-          // FILM
-          input.what-watch--radio(
-            type="radio"
-            id="radioFilm"
-            value="Film"
-            v-model="whatWatch"
-          )
-          label(
-            for="radioFilm"
-          ) Film
+            // FILM
+            input.what-watch--radio(
+              type="radio"
+              id="radioFilm"
+              value="Film"
+              v-model="whatWatch"
+            )
+            label(
+              for="radioFilm"
+            ) Film
 
-          // SERIAL
-          input.what-watch--radio(
-            type="radio"
-            id="radioSerial"
-            value="Serial"
-            v-model="whatWatch"
-          )
-          label(
-            for="radioSerial"
-          ) Serial
-        // TOTAL TIME
-        .total-time
+            // SERIAL
+            input.what-watch--radio(
+              type="radio"
+              id="radioSerial"
+              value="Serial"
+              v-model="whatWatch"
+            )
+            label(
+              for="radioSerial"
+            ) Serial
+          // TOTAL TIME
+          .total-time
 
-          // FILM TIME
-          .total-time__film(
-            v-if="whatWatch ===  'Film'"
-          )
-            span.time-title Hours
-            input.time-input(
-              type="number"
-              v-model.number="filmHours"
+            // FILM TIME
+            .total-time__film(
+              v-if="whatWatch ===  'Film'"
             )
-            span.time-title Minutes
-            input.time-input(
-              type="number"
-              v-model.number="filmMinutes"
-            )
-            p {{ filmTime }}
-
-          // SERIAL TIME
-          .total-time__serial(
-            v-if="whatWatch ===  'Serial'"
-          )
-            span.time-title How many season?
-            input.time-input(
-              type="number"
-              v-model.number="serialSeason"
-            )
-            span.time-title How many series?
-            input.time-input(
-              type="number"
-              v-model.number="serialSeries"
-            )
-            span.time-title How mach time by series?
-            input.time-input(
-              type="number"
-              v-model.number="serialSeriesMinutes"
-            )
-            p {{ serialTime }}
-
-          // ANIME TIME
-          .total-time__anime(
-            v-if="whatWatch ===  'Anime'"
-          )
-            span.time-title How many season?
-            input.time-input(
-              type="number"
-              v-model.number="animeSeason"
-            )
-            span.time-title How many series?
-            input.time-input(
-              type="number"
-              v-model.number="animeSeries"
-            )
-            span.time-title How mach time by series?
-            input.time-input(
-              type="number"
-              v-model.number="animeSeriesMinutes"
-            )
-            p {{ animeTime }}
-
-        // IMG
-        img(
-            :src="image"
-            alt="NO IMAGE"
-          )
-        // TAGS
-        // add new tag
-        .tag_list.tag_list--add
-          .ui-tag__wrapper(
-            @click="tagMenuShow = !tagMenuShow"
-          )
-            .ui-tag
-              span.tag-title Add New
-              span.button-close(
-                :class="{ active: !tagMenuShow }"
+              span.time-title Hours
+              input.time-input(
+                type="number"
+                v-model.number="filmHours"
               )
-        // show input
-        .tag-list.tag-list--menu(
-          v-if="tagMenuShow"
-        )
-          input.tag-add--input(
-            type="text"
-            placeholder="New tag"
-            v-model="tagTitle"
-            @keyup.enter="newTag"
-          )
-          .button.button-default(
-            @click="newTag"
-          ) Send
-        .tag_list
-        .ui-tag__wrapper(
-          v-for="tag in tags"
-          :key="tag.title"
-        )
-          .ui-tag(
-            @click="addTagUsed(tag)"
-            :class="{ used: tag.use }"
-          )
-            span.tag-title {{ tag.title }}
-            span.button-close
-        p {{ tagsUsed }}
-        .button-list
-          .button.button--round.button-primary(
-            @click="newTask"
-          ) Send
+              span.time-title Minutes
+              input.time-input(
+                type="number"
+                v-model.number="filmMinutes"
+              )
+              p {{ filmTime }}
+
+            // SERIAL TIME
+            .total-time__serial(
+              v-if="whatWatch ===  'Serial'"
+            )
+              span.time-title How many season?
+              input.time-input(
+                type="number"
+                v-model.number="serialSeason"
+              )
+              span.time-title How many series?
+              input.time-input(
+                type="number"
+                v-model.number="serialSeries"
+              )
+              span.time-title How mach time by series?
+              input.time-input(
+                type="number"
+                v-model.number="serialSeriesMinutes"
+              )
+              p {{ serialTime }}
+
+            // ANIME TIME
+            .total-time__anime(
+              v-if="whatWatch ===  'Anime'"
+            )
+              span.time-title How many season?
+              input.time-input(
+                type="number"
+                v-model.number="animeSeason"
+              )
+              span.time-title How many series?
+              input.time-input(
+                type="number"
+                v-model.number="animeSeries"
+              )
+              span.time-title How mach time by series?
+              input.time-input(
+                type="number"
+                v-model.number="animeSeriesMinutes"
+              )
+              p {{ animeTime }}
+
+          // IMG
+          img(
+              :src="image"
+              alt="NO IMAGE"
+            )
+          // TAGS LIST
+          // add new tag button
+          .tag_list.tag_list--add
+            .ui-tag__wrapper(
+              @click="tagMenuShow = !tagMenuShow"
+            )
+              .ui-tag
+                span.tag-title Add New
+                span.button-close(
+                  :class="{ active: !tagMenuShow }"
+                )
+          // show input
+          transition(name="fade")
+            .tag-list.tag-list--menu(
+              v-if="tagMenuShow"
+            )
+              input.tag-add--input(
+                type="text"
+                placeholder="New tag"
+                v-model="tagTitle"
+                @keyup.enter="newTag"
+              )
+              .button.button-default(
+                @click="newTag"
+              ) Send
+          .tag_list
+            transition-group(
+              enter-active-class="animated fadeInRight"
+              leave-active-class="animated fadeOutDown"
+            )
+              .ui-tag__wrapper(
+                v-for="tag in tags"
+                :key="tag.title"
+              )
+                .ui-tag(
+                  @click="addTagUsed(tag)"
+                  :class="{ used: tag.use }"
+                )
+                  span.tag-title {{ tag.title }}
+                  span.button-close
+          p {{ tagsUsed }}
+          .button-list
+            button.button.button--round.button-primary(
+              type="submit"
+              :disabled="submitStatus === 'PENDING'"
+            ) Send
 </template>
 
 <script>
+import { required } from 'vuelidate/lib/validators'
 export default {
   created () {
     console.log(this.$lodash.isEmpty(null));
   },
   data () {
     return {
+      submitStatus: null,
       taskTitle: '',
       taskDescription: '',
       whatWatch: 'Anime',
@@ -191,6 +205,11 @@ export default {
       tagsUsed: []
     }
   },
+  validations: {
+    taskTitle: {
+      required
+    }
+  },
   methods: {
     newTag() {
       if (this.tagTitle === '') {
@@ -202,43 +221,70 @@ export default {
       }
       this.$store.dispatch('newTag', tag)
     },
-    newTask () {
-      if(this.taskTitle === ''){
-        return
-      }
-      let time
-      switch (this.whatWatch) {
-        case 'Film':
-          time = this.filmTime
-          break
-        case 'Anime':
-          time = this.animeTime
-          break
-        case 'Serials':
-          time = this.serialTime
-          break
+    // SUBMIT NEW TASK
+    onSubmit  () {
+      this.$v.$touch()
+
+
+      if(this.$v.$invalid){
+        console.log('ERROR')
+        this.submitStatus = 'ERROR'
+      } else {
+        console.log("SEND")
+        this.submitStatus = 'PENDING'
+
+        //firebase waiting
+        setTimeout(() => {
+          this.submitStatus = 'OK'
+        }, 500)
+
+        let time
+        switch (this.whatWatch) {
+          case 'Film':
+            time = this.filmTime
+            break
+          case 'Anime':
+            time = this.animeTime
+            break
+          case 'Serials':
+            time = this.serialTime
+            break
+        }
+
+        const task = {
+          title: this.taskTitle,
+          description: this.taskDescription,
+          whatWatch: this.whatWatch,
+          time,
+          tags: this.tagsUsed,
+          completed: false,
+          editing: false
+        }
+        this.$store.dispatch('newTask', task)
+        console.table(task)
+
+        // RESET
+        this.taskTitle = ''
+        this.taskDescription = ''
+        this.$v.$reset()
+
+        //reset for tags
+        this.tagsUsed = []
+        this.tagMenuShow = false
+        this.tagTitle = ''
+
+        for (let i = 0; i < this.tags.length; i++){
+          this.tags[i].use = false
+        }
+
+
       }
 
-      const task = {
-        title: this.taskTitle,
-        description: this.taskDescription,
-        whatWatch: this.whatWatch,
-        time,
-        tags: this.tagsUsed,
-        completed: false,
-        editing: false
-      }
+      // time
 
-      this.$store.dispatch('newTask', task)
-      console.log(task)
-      // RESET
-      this.taskTitle = ''
-      this.taskDescription = ''
-      this.tagsUsed = []
 
-      for (let i = 0; i < this.tags.length; i++){
-        this.tags[i].use = false
-      }
+
+
     },
     addTagUsed(tag) {
       tag.use = !tag.use
@@ -344,4 +390,20 @@ img
 .button-list
   display flex
   justify-content flex-end
+
+//
+// Validate
+//
+.form-item
+  .error
+    display none
+    margin-bottom 8px
+    font-size 13.4px
+    color #fc5c65
+  &.errorInput
+    .error
+      display block
+input
+  &.error
+    border-color #fc5c65
 </style>
