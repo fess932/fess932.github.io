@@ -1,3 +1,6 @@
+import firebase from 'firebase/app'
+import Task from './task_help'
+
 export default {
   state: {
     tasks: [
@@ -26,7 +29,30 @@ export default {
     }
   },
   actions: {
-    newTask ({commit}, payload) {
+    async newTask ({commit, getters}, payload) {
+      commit('clearError')
+      commit('setLoading', true)
+      try {
+        const newTask = new Task(
+          payload.title,
+          payload.description,
+          payload.whatWatch,
+          payload.time,
+          payload.tags,
+          payload.completed,
+          payload.editing,
+          getters.user.id
+        )
+        const task = await firebase.database().ref('tasks').push(newTask)
+        console.log(task)
+
+        commit('newTask', payload)
+        commit('setLoading', false)
+      } catch (error) {
+        commit('setLoading', false)
+        commit('setError', error.message)
+        throw error
+      }
       payload.id = Math.random()
       commit('newTask', payload)
     }

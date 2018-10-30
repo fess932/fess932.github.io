@@ -22,7 +22,7 @@ export default {
         commit('setLoading', false)
       } catch (error) {
         commit('setLoading', false)
-        commit('setError', error.message)        
+        commit('setError', error.message)
         throw error
       }
     },
@@ -36,13 +36,17 @@ export default {
         commit('setLoading', false)
       } catch (error) {
         commit('setLoading', false)
-        commit('setError', error.message)        
+        commit('setError', error.message)
         throw error
       }
     },
     loggedUser ({commit}, payload) {
       commit('setUser', new User(payload.uid))
-      // console.log(payload.uid)
+      console.log(payload.uid)
+    },
+    logoutUser ({commit}) {
+      firebase.auth().signOut()
+      commit('setUser', null)
     }
   },
   getters: {
