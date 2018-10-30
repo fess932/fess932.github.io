@@ -4,9 +4,9 @@
       .container
         .auth
           .auth__banner
-            h1.ui-title-2 Hello Banner
+            img(src="https://i.ytimg.com/vi/UfQf0p7jNvo/maxresdefault.jpg")
           .auth__form
-            span.ui-title-2 Registration
+            span.ui-title-2 Регистрация
             form(@submit.prevent="onSubmit")
               .form-item(:class="{ 'errorInput': $v.email.$error }")
                 input(
@@ -16,8 +16,8 @@
                   :class="{ 'error': $v.email.$error }"
                   @change="$v.email.$touch()"
                 )
-                .error(v-if="!$v.email.required") Field is required
-                .error(v-if="!$v.email.email") Email is not correct
+                .error(v-if="!$v.email.required") Поле необходимо
+                .error(v-if="!$v.email.email") Почта неправильна
 
               .form-item(:class="{ 'errorInput': $v.password.$error }")
                 input(
@@ -27,9 +27,9 @@
                   :class="{ 'error': $v.password.$error }"
                   @change="$v.password.$touch()"
                 )
-                .error(v-if="!$v.password.required") Password is required.
+                .error(v-if="!$v.password.required") Нужен пароль.
                 .error(v-if="!$v.password.minLength")
-                  | Password must have at least {{ $v.password.$params.minLength.min }} letters.
+                  | У пароля должно быть хотя бы {{ $v.password.$params.minLength.min }} букв.
 
 
               .form-item(:class="{ 'errorInput': $v.repeatPassword.$error }")
@@ -40,16 +40,18 @@
                   :class="{ 'error': $v.repeatPassword.$error }"
                   @change="$v.repeatPassword.$touch()"
                 )
-                .error(v-if="!$v.repeatPassword.sameAsPassword") Passwords must be identical.
+                .error(v-if="!$v.repeatPassword.sameAsPassword") Пароли должны совпадать.
               .buttons-list
                 button.button.button-primary(
                   type="submit"
-                  :disabled="submitStatus === 'PENDING'"
-                ) Registration
+                ) 
+                  span(v-if="loading") Загрузка...
+                  span(v-else) Регистрация
                 .buttons-list.buttons-list--info
                   p.typo__p(v-if="submitStatus === 'OK'") Thanks for your submission!
                   p.typo__p(v-if="submitStatus === 'ERROR'") Please fill the form correctly.
-                  p.typo__p(v-if="submitStatus === 'PENDING'") Sending...
+                  p.typo__p(v-else) {{ submitStatus }}
+                  //- p.typo__p(v-if="submitStatus === 'PENDING'") Sending...
 
                 .buttons-list.buttons-list--info
                   span Do you have account?
@@ -88,18 +90,30 @@ export default {
       if (this.$v.$invalid) {
         this.submitStatus = 'ERROR'
       } else {
-        console.log('submit!')
         const user = {
           email: this.email,
           password: this.password
         }
-        console.table(user)
+        this.$store.dispatch('registerUser', user)
+          .then(()=>{
+            console.log('REGISTER')
+            this.submitStatus = 'OK'
+            this.$router.push('/')
+          })
+          .catch(err=>{
+            this.submitStatus = err.message
+          })
         // do your submit logic here
-        this.submitStatus = 'PENDING'
-        setTimeout(() => {
-          this.submitStatus = 'OK'
-        }, 500)
+        // this.submitStatus = 'PENDING'
+        // setTimeout(() => {
+        //   this.submitStatus = 'OK'
+        // }, 500)
       }
+    }
+  },
+  computed: {
+    loading() {
+      return this.$store.getters.loading
     }
   }
 }
