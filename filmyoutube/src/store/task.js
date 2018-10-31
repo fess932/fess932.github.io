@@ -3,32 +3,61 @@ import Task from './task_help'
 
 export default {
   state: {
-    tasks: [
-      {
-        'id': 1,
-        'title': 'Ashes',
-        'time': '100 hours',
-        'description': 'Блестящий, но одержимый профессор, работает над изобретениелжен остановить инфекцию прежде, чем она погубит его, и тех кого он любит.',
-        'whatWatch': 'Film',
-        'completed': false,
-        'editing': false
-      },
-      {
-        'id': 2,
-        'title': 'Breaking Bad',
-        'description': 'Школьный учитель химии Уолтер Уайт узнаёт, что болен раком лёго исключённого из школы при активном содействии Уайта. Пинкман сам занимался «варкой мета», но накануне, в ходе рейда УБН, он лишился подельника и лаборатории…',
-        'whatWatch': 'Serial',
-        'completed': true,
-        'editing': false
-      }
-    ]
+    tasks: []
   },
   mutations: {
+    loadTasks (state, payload) {
+      state.tasks = payload
+    },
     newTask (state, payload) {
       state.tasks.push(payload)
     }
   },
   actions: {
+    async loadTasks ({commit}, payload) {
+      commit('clearError')
+      commit('setLoading', true)
+      try {
+        const task = await firebase.database().ref('tasks').once('value')
+        const tasks = task.val()
+        const tasksArray = []
+        Object.keys(tasks).forEach(key => {
+          const t = tasks[key]
+          tasksArray.push(
+            new Task(
+              t.title,
+              t.description,
+              t.whatWatch,
+              t.time,
+              t.tags,
+              t.completed,
+              t.editing,
+              t.user,
+              key
+            )
+          )
+        })
+
+        commit('loadTasks', tasksArray)
+        console.log(tasks)
+
+        // const newTask = new Task(
+        //   payload.title,
+        //   payload.description,
+        //   payload.whatWatch,
+        //   payload.time,
+        //   payload.tags,
+        //   payload.completed,
+        //   payload.editing,
+        // )
+
+        commit('setLoading', false)
+      } catch (error) {
+        commit('setLoading', false)
+        commit('setError', error.message)
+        throw error
+      }
+    },
     async newTask ({commit, getters}, payload) {
       commit('clearError')
       commit('setLoading', true)
@@ -46,28 +75,33 @@ export default {
         const task = await firebase.database().ref('tasks').push(newTask)
         console.log(task)
 
-        commit('newTask', payload)
+        commit('newTask', {
+          ...newTask,
+          id: task.key
+        })
         commit('setLoading', false)
       } catch (error) {
         commit('setLoading', false)
         commit('setError', error.message)
         throw error
       }
-      payload.id = Math.random()
-      commit('newTask', payload)
     }
   },
   getters: {
-    tasks (state) {
-      return state.tasks
-    },
-    taskCompleted (state) {
+    tasks (state, getters) {
       return state.tasks.filter(task => {
+        if (getters.user) {
+          return task.user === getters.user.id
+        }
+      })
+    },
+    taskCompleted (state, getters) {
+      return getters.tasks.filter(task => {
         return task.completed
       })
     },
-    taskNotCompleted (state) {
-      return state.tasks.filter(task => {
+    taskNotCompleted (state, getters) {
+      return getters.tasks.filter(task => {
         return task.completed === false
       })
     }

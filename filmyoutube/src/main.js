@@ -38,7 +38,9 @@ new Vue({
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.$store.dispatch('loggedUser', user)
+        this.$router.push('/tasks')
       }
+      this.$store.dispatch('loadTasks')
     })
   }
 }).$mount('#app')

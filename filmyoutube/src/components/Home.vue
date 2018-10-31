@@ -276,8 +276,6 @@ export default {
         for (let i = 0; i < this.tags.length; i++){
           this.tags[i].use = false
         }
-
-
       }
 
       // time
